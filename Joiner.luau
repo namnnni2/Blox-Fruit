@@ -3,16 +3,11 @@ if not a or a == "" then
     return
 end
 
-local PlaceId = 79091703265657
-
-if game.PlaceId ~= PlaceId then
+local PlaceId = game.PlaceId
+game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("TravelDressrosa")
     queue_on_teleport([[ 
-        task.wait(5)
         if game.JobId ~= "]] .. a .. [[" then
             game:GetService("TeleportService"):TeleportToPlaceInstance(]] .. PlaceId .. [[, "]] .. a .. [[")
         end
     ]])
-    game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("TravelDressrosa")
-else
     game:GetService("TeleportService"):TeleportToPlaceInstance(PlaceId, a)
-end
