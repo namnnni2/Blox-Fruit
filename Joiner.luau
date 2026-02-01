@@ -9,4 +9,5 @@ queue_on_teleport([[
         end
     ]])
 game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("TravelDressrosa")
+task.wait(1)
  game:GetService("TeleportService"):TeleportToPlaceInstance(PlaceId, a)
